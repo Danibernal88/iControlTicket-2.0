@@ -78,4 +78,12 @@ class Vehiculo extends Model
     public function tercero(){
         return $this->belongsTo(Tercero::class, 'propietario', 'idTerceros');
     }
+
+    public function bimestrales(){
+        return $this->hasMany(Bimestral::class, 'idVehiculo', 'id');
+    }
+
+    public function conductores(){
+        return $this->hasMany(Conductor::class, 'idVehiculo', 'id');
+    }
 }

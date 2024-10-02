@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BimestralController;
+use App\Http\Controllers\ConductorController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\HojaVidaController;
 use App\Http\Controllers\IndexController;
@@ -35,3 +37,6 @@ Route::resource('/administracion/poblaciones', PoblacionController::class)->midd
     'poblaciones' => 'poblacion'
 ]);
 Route::resource('/prestacion-servicio/vehiculos', VehiculoController::class)->middleware('auth');
+Route::post('/prestacion-servicio/bimestralModal', [BimestralController::class, 'store'])->name('bimestralModal.store');
+Route::post('/prestacion-servicio/conductorModal', [ConductorController::class, 'store'])->name('conductorModal.store');
+Route::post('/prestacion-servicio/{id}/retirar', [ConductorController::class, 'retirar'])->name('conductorModal.retirar');

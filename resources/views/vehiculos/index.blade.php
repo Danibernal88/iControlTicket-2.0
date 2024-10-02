@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-        <div class="row d-flex justify-content-end">
+            <div class="row d-flex justify-content-end">
                 <div class="col-md-3 my-2">
                     <input type="text" id="customSearch" class="form-control"  placeholder="Buscar">
                 </div> 
@@ -16,19 +16,20 @@
             <table id="vehiculosTable" 
                     data-toggle="table"
                     data-pagination="true" 
-                    data-search="true" 
+                    data-search="true"
+                    data-locale="es-MX"
                     data-search-selector="#customSearch">
                 <thead>
                     <tr>
-                        <th data-field="placa">Placa</th>
-                        <th data-field="nDocumento">Documento Prop.</th>
-                        <th data-field="nombreCompleto">Nombre Prop.</th>
-                        <th data-field="fechaVtoCDA">Vto CDA</th>
-                        <th data-field="fechaVtoTO">Vto TO</th>
-                        <th data-field="fechaVtoExtintor">Vto Extintor</th>
-                        <th data-field="fechaVtoSOAT">Vto SOAT</th>
-                        <th data-field="fechaVtoRCC">Vto RCC</th>
-                        <th data-field="fechaVtoRCE">Vto RCE</th>
+                        <th data-field="placa" data-halign="center" data-align="center">Placa</th>
+                        <th data-field="nDocumento" data-halign="center" data-align="center">Documento Prop.</th>
+                        <th data-field="nombreCompleto" data-halign="center" data-align="center">Nombre Prop.</th>
+                        <th data-field="fechaVtoCDA" data-halign="center" data-align="center">Vto CDA</th>
+                        <th data-field="fechaVtoTO" data-halign="center" data-align="center">Vto TO</th>
+                        <th data-field="fechaVtoExtintor" data-halign="center" data-align="center">Vto Extintor</th>
+                        <th data-field="fechaVtoSOAT" data-halign="center" data-align="center">Vto SOAT</th>
+                        <th data-field="fechaVtoRCC" data-halign="center" data-align="center">Vto RCC</th>
+                        <th data-field="fechaVtoRCE" data-halign="center" data-align="center">Vto RCE</th>
                         <th data-field="editar"></th>
                     </tr>
                 </thead>
@@ -81,7 +82,9 @@
                                         NA
                                     @endif
                                     </td>
-                                <td><a href="{{route('vehiculos.edit',$vehiculo)}}" class="btn btn-outline-success">Editar</a></td>
+                                <td>
+                                    <a href="{{route('vehiculos.edit',$vehiculo)}}" class="btn btn-outline-success">Editar</a>
+                                </td>
                             </tr>
                         @endif
                     @endforeach

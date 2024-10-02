@@ -23,7 +23,8 @@ class TerceroCreateRequest extends FormRequest
     {
         return [
             'nDocumento'=>'required|string',
-            'idCenPob'=>'required|string'
+            'idCenPob'=>'required|string',
+            'nombre1Tercero'=>'required|string'
         ];
     }
 
@@ -31,7 +32,8 @@ class TerceroCreateRequest extends FormRequest
     {
         return [
             'nDocumento.required' => 'Campo número documento obligatorio.',
-            'idCenPob.required' => 'Debe seleccionar un departamento y ciudad validos.'
+            'idCenPob.required' => 'Debe seleccionar un departamento y ciudad validos.',
+            'nombre1Tercero.required'=>'Campo nombre 1 documento obligatorio.'
         ];
     }
 }

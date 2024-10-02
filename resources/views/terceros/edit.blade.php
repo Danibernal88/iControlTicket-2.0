@@ -22,7 +22,7 @@
                 </select>
             </div>
             <div class="col-md-3 mt-2">
-                <label for="nombre1Tercero" class="form-label">Primer Nombre</label>
+                <label for="nombre1Tercero" class="form-label">Primer Nombre *</label>
                 <input type="text" class="form-control" id="nombre1Tercero" name="nombre1Tercero" placeholder="Ingrese nombre 1" value="{{old('nombre1Tercero', $tercero->nombre1Tercero)}}">
             </div>
             <div class="col-md-3 mt-2">

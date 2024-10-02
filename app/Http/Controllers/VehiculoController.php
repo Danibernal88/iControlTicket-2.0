@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\VehiculoCreateRequest;
 use App\Http\Requests\VehiculoUpdateRequest;
+use App\Models\Bimestral;
+use App\Models\Conductor;
+use App\Models\HojaVida;
 use App\Models\Tercero;
 use App\Models\Vehiculo;
 use Illuminate\Http\Request;
@@ -101,8 +104,18 @@ class VehiculoController extends Controller
     {
         $empresaId = Auth::user()->empresa_id;
         $terceros = Tercero::where('IdEmpresa', $empresaId)->get();
+        $bimestrales = Bimestral::where('idVehiculo', $vehiculo->id)->get();
+        $hojasVida = HojaVida::with(['tercero'])->get();
+        $conductoresActivos = Conductor::with(['hojaVida.tercero'])
+            ->where('idVehiculo', $vehiculo->id)
+            ->where('retirado',0)
+            ->get();
+        $conductoresRetirados = Conductor::with(['hojaVida.tercero'])
+            ->where('idVehiculo', $vehiculo->id)
+            ->where('retirado',1)
+            ->get();
 
-        return view('vehiculos.edit', compact('vehiculo', 'terceros'));
+        return view('vehiculos.edit', compact('vehiculo', 'terceros', 'bimestrales', 'hojasVida', 'conductoresActivos', 'conductoresRetirados'));
     }
 
     /**

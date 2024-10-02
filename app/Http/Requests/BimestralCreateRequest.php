@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TerceroUpdateRequest extends FormRequest
+class BimestralCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,16 +22,16 @@ class TerceroUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nDocumento'=>'required|string',
-            'nombre1Tercero'=>'required|string'
+            'fechaExpRPbimest'=>'required|date',
+            'fechaVtoRPbimest'=>'required|date',
         ];
     }
 
     public function messages()
     {
         return [
-            'nDocumento.required' => 'Campo número documento obligatorio.',
-            'nombre1Tercero.required'=>'Campo nombre 1 documento obligatorio.'
+            'fechaExpRPbimest.required' => 'Campo fecha expedición obligatorio.',
+            'fechaVtoRPbimest.required' => 'Campo fecha vencimiento obligatorio.'
         ];
     }
 }

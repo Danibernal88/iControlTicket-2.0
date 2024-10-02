@@ -65,6 +65,10 @@ class HojaVida extends Model
         return $this->hasMany(SeguridadSocial::class, 'idhv', 'idhv');
     }
 
+    public function conductores(){
+        return $this->hasMany(Conductor::class, 'idhv', 'idhv');
+    }
+
 
 
 }

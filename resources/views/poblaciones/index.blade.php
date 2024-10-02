@@ -17,13 +17,14 @@
                     data-toggle="table"
                     data-pagination="true" 
                     data-search="true" 
-                    data-search-selector="#customSearch">
+                    data-search-selector="#customSearch"
+                    data-locale="es-MX">
                 <thead>
                     <tr>
-                        <th data-field="departamento">Departamento</th>
-                        <th data-field="municipio">Municipio</th>
-                        <th data-field="centroPoblado">Centro Poblado</th>
-                        <th data-field="dane">Dane</th>
+                        <th data-field="departamento" data-halign="center" data-align="center">Departamento</th>
+                        <th data-field="municipio" data-halign="center" data-align="center">Municipio</th>
+                        <th data-field="centroPoblado" data-halign="center" data-align="center">Centro Poblado</th>
+                        <th data-field="dane" data-halign="center" data-align="center">Dane</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,5 +46,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection
